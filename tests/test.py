@@ -15,6 +15,11 @@ class BasicTests(unittest.TestCase):
         # Verifica que la respuesta sea "Hello, World!"
         self.assertEqual(result.status_code, 200)
         self.assertEqual(result.data.decode(), "Hello, World!")
+    
+    def test_cristian(self):
+        result = self.app.get('/cristian')
+        self.assertEqual(result.status_code, 200)
+        self.assertEqual(result.data.decode(), "Cristiano es el mejor del mundo siuuuu!")
 
 
 if __name__ == "__main__":
