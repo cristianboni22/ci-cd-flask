@@ -1,4 +1,4 @@
-# ci-cd-flask
+# CI-CD-Flask
 
 En este tutorial, vamos a implementar un flujo de Integración Continua (CI) y Entrega/Despliegue Continuo (CD) para una aplicación web desarrollada con Flask. El objetivo es automatizar pruebas, la creación de imágenes Docker y el despliegue en AWS.
 
@@ -35,18 +35,21 @@ En este tutorial, vamos a implementar un flujo de Integración Continua (CI) y E
 python3 -m venv venv
 source venv/bin/activate
 ```
+![Ejecutamos los comandos](img/preparacion1.png)
 
 **Instalar las dependencias**
 
 ```bash
 pip install -r requirements.txt
 ```
+![Ejecutamos los comandos](img/preparacion2.png)
 
 **Desactivar el entorno virtual**
 
 ```bash
 deactivate
 ```
+![Ejecutamos los comandos](img/preparacion3.png)
 
 ---
 
@@ -59,6 +62,7 @@ Usaremos unittest, el módulo integrado de Python.
 ```bash
 python3 -m unittest tests/*.py
 ```
+![Comando para ejecutar pruebas](img/ejecucionPruebas.png)
 
 ---
 
@@ -133,5 +137,8 @@ docker push usuario/ci-cd-flask
 ```bash
 git push origin main
 ```
+![Ponemos el comando para subir el codigo](img/push.png)
+
+![Ponemos el push con test](img/push2.png)
 
 Con este comando se disparará todo el flujo CI/CD: pruebas automáticas, creación de la imagen Docker y despliegue en AWS
